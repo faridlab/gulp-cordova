@@ -16,6 +16,7 @@
 
 var
 gulp = require('gulp'),
+colors = require('colors/safe'),
 manifest = require('./manifest.json');
 
 // shelljs as global requirement
@@ -35,11 +36,19 @@ gulp.task('generate:config', function generateConfig() {
   configFile = 'config.xml';
 
   sed('-i', 'GENERATE:ID', manifest.id, configFile);
+  console.log(colors.blue('Generate id: '), colors.yellow(manifest.id));
   sed('-i', 'GENERATE:VERSION', manifest.version, configFile);
+  console.log(colors.blue('Generate version: '), colors.yellow(manifest.version));
   sed('-i', 'GENERATE:NAME', manifest.name, configFile);
+  console.log(colors.blue('Generate name: '), colors.yellow(manifest.name));
   sed('-i', 'GENERATE:DESC', manifest.description, configFile);
+  console.log(colors.blue('Generate description: '), colors.yellow(manifest.description));
   sed('-i', 'GENERATE:EMAIL', manifest.email, configFile);
+  console.log(colors.blue('Generate email: '), colors.yellow(manifest.email));
   sed('-i', 'GENERATE:URL', manifest.url, configFile);
+  console.log(colors.blue('Generate url: '), colors.yellow(manifest.url));
   sed('-i', 'GENERATE:TEAM', manifest.team, configFile);
+  console.log(colors.blue('Generate team: '), colors.yellow(manifest.team));
+  console.log(colors.green('File config.xml generated successfuly !.'));
 
 });
