@@ -23,11 +23,6 @@ require('shelljs/global');
 
 
 gulp.task('default', function() {
-
-  ls('*.json').forEach(function(file) {
-      console.log(file);
-  });
-
   console.log('Hola, welcome to gulp cordova');
   console.log(manifest);
   // place code for your default task here
@@ -35,9 +30,16 @@ gulp.task('default', function() {
 
 
 gulp.task('generate:config', function generateConfig() {
+
   var
   configFile = 'config.xml';
-  sed('-i', 'BUILD_VERSION', 'v0.1.2', file);
-  sed('-i', /.*REMOVE_THIS_LINE.*\n/, '', file);
-  sed('-i', /.*REPLACE_LINE_WITH_MACRO.*\n/, cat('macro.js'), file);
+
+  sed('-i', 'GENERATE:ID', manifest.id, configFile);
+  sed('-i', 'GENERATE:VERSION', manifest.version, configFile);
+  sed('-i', 'GENERATE:NAME', manifest.name, configFile);
+  sed('-i', 'GENERATE:DESC', manifest.description, configFile);
+  sed('-i', 'GENERATE:EMAIL', manifest.email, configFile);
+  sed('-i', 'GENERATE:URL', manifest.url, configFile);
+  sed('-i', 'GENERATE:TEAM', manifest.team, configFile);
+
 });
