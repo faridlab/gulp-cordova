@@ -29,7 +29,7 @@ gulp.task('default', function() {
   // place code for your default task here
 });
 
-gulp.task('init', ['generate:config', 'platform:install']);
+gulp.task('init', ['generate:config', 'platform:install', 'plugins:install']);
 
 gulp.task('platform:install', function() {
   if (!which('cordova')) {
@@ -41,6 +41,20 @@ gulp.task('platform:install', function() {
   for(var i in manifest.platforms) {
     exec('cordova platform add ' + manifest.platforms[i]);
   }
+});
+
+
+gulp.task('plugins:install', function() {
+  if (!which('cordova')) {
+    echo(colors.red('Sorry, this script requires cordova'));
+    echo(colors.green('Try to install cordova: `npm install [-g] cordova`'));
+    exit(1);
+  }
+
+  for(var i in manifest.plugins) {
+    exec('cordova plugins add ' + i +'@'+ manifest.plugins[i]);
+  }
+
 });
 
 
