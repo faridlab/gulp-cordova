@@ -14,11 +14,11 @@
     "environment": "development",
     "serve": false,
     "plugins": {
-        "cordova:cordova-plugin-file": "3.0.0",
-        "cordova:cordova-plugin-file-transfer": "1.2.1",
-        "cordova:cordova-plugin-whitelist": "1.0.0",
-        "cordova:cordova-plugin-dialogs": "1.1.1",
-        "cordova:cordova-plugin-splashscreen": "2.1.0",
-        "cordova:cordova-plugin-statusbar": "1.0.1"
+        "cordova-plugin-file": "3.0.0",
+        "cordova-plugin-file-transfer": "1.2.1",
+        "cordova-plugin-whitelist": "1.0.0",
+        "cordova-plugin-dialogs": "1.1.1",
+        "cordova-plugin-splashscreen": "2.1.0",
+        "cordova-plugin-statusbar": "1.0.1"
     }
 }
