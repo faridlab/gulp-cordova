@@ -1,0 +1,24 @@
+{
+    "id": "io.cordova.hello",
+    "version": "0.0.1",
+    "description": "DESCRIPTION YOUR AWESOME APP",
+    "name": "YOUR AWESOME APP NAME",
+    "email": "YOUR EMAIL",
+    "url": "http://awesomeapp.com",
+    "team": "YOUR AWESOME TEAM",
+
+    "keystore": {
+        "keyPassword": "YOUR_PASSWORD",
+        "storePassword": "YOUR_PASSWORD"
+    },
+    "environment": "development",
+    "serve": false,
+    "plugins": {
+        "cordova:cordova-plugin-file": "3.0.0",
+        "cordova:cordova-plugin-file-transfer": "1.2.1",
+        "cordova:cordova-plugin-whitelist": "1.0.0",
+        "cordova:cordova-plugin-dialogs": "1.1.1",
+        "cordova:cordova-plugin-splashscreen": "2.1.0",
+        "cordova:cordova-plugin-statusbar": "1.0.1"
+    }
+}
